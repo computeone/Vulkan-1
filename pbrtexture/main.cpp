@@ -78,7 +78,7 @@ public:
 
 	struct UBOParams {
 		glm::vec4 lights[4];
-		float exposure = 2.0f;
+		float exposure = 4.5f;
 		float gamma = 2.2f;
 	} uboParams;
 
@@ -97,7 +97,7 @@ public:
 
 	VulkanExample() : VulkanExampleBase(ENABLE_VALIDATION)
 	{
-		title = "Vulkan textured PBR using IBL";
+		title = "Vulkan Example - Textured PBR with IBL";
 
 		enableTextOverlay = true;
 		camera.type = Camera::CameraType::firstperson;
@@ -1385,7 +1385,7 @@ public:
 		// 3D object
 		uboMatrices.projection = camera.matrices.perspective;
 		uboMatrices.view = camera.matrices.view;
-		uboMatrices.model = glm::rotate(glm::mat4(), glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		uboMatrices.model = glm::rotate(glm::mat4(), glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		uboMatrices.camPos = camera.position * -1.0f;
 		memcpy(uniformBuffers.object.mapped, &uboMatrices, sizeof(uboMatrices));
 
